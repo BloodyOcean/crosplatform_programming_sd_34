@@ -2,14 +2,14 @@ package Interfaces;
 
 import Entities.Animal;
 
-import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Comparator;
 
-interface IManager {
-    ArrayList<Animal> searchAnimalByDaysWithoutFood();
-    ArrayList<Animal> searchAnimalByDanger();
-    void sort(ArrayList<Animal> animals, boolean order);
-    void sort(ArrayList<Animal> animals, Comparator<Animal> comparator);
-    void sortByAnonymousExp(ArrayList<Animal> animals);
-    void sortByLambda(ArrayList<Animal> animals, AnimalFunc exp);
+public interface IManager {
+    Collection<Animal> searchAnimalByDaysWithoutFood(long days);
+    Collection<Animal> searchAnimalByDanger(double danger);
+    void sort(boolean order);
+    void sort(Comparator<Animal> comparator);
+    void sortByAnonymousExp(IAnonymous anonymousClass);
+    void sortByLambda(IAnimalFunc exp);
 }

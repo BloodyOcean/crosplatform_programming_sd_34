@@ -1,0 +1,26 @@
+[
+  {
+    "title":"1984",
+    "year":2005,
+    "director":"F. Koloppa",
+    "producers":["A. Kovalenko, E. Bernshtein"]
+  },
+  {
+    "title":"Cowboy in town",
+    "year":2010,
+    "director":"C. Mudragel",
+    "producers":["A. Sasd, E. Rep"]
+  },
+  {
+    "title":"Evangelion",
+    "year":1999,
+    "director":"A. Kawasaki",
+    "producers":["A. Toyota, E. Nissan"]
+  },
+  {
+    "title":"Prikol jokera",
+    "year":1995,
+    "director":"A. Kawasaki",
+    "producers":["A. Toyota, E. Harakiri"]
+  }
+]

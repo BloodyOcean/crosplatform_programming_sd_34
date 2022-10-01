@@ -21,22 +21,32 @@ public class SecondManager implements IManager{
 
         for (var item : res)
         {
-            var old_lst = this.dictionary.get(item.getYear());
-
-            if (old_lst == null)
-            {
-                old_lst = new ArrayList<Film>();
-                old_lst.add(item);
-                this.dictionary.put(item.getYear(), old_lst);
-            }
-            else
-            {
-                old_lst.add(item);
-            }
-
-            this.dictionary.put(item.getYear(), old_lst);
+            this.addFilm(item);
         }
 
+    }
+
+    @Override
+    public void addFilm(Film item) {
+        var old_lst = this.dictionary.get(item.getYear());
+
+        if (old_lst == null)
+        {
+            old_lst = new ArrayList<Film>();
+            old_lst.add(item);
+            this.dictionary.put(item.getYear(), old_lst);
+        }
+        else
+        {
+            old_lst.add(item);
+        }
+
+        this.dictionary.put(item.getYear(), old_lst);
+    }
+
+    @Override
+    public void remove(Object key) {
+        this.dictionary.remove(key);
     }
 
     @Override

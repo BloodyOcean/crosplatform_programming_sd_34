@@ -13,10 +13,6 @@ public class Main {
             String line = scnr.nextLine();
             sb.append(line);
         }
-
-        var res = StringHelper.calc(sb.toString());
-        System.out.println("[RESULT]:" + res);
-        var changed_text = StringHelper.change(res);
-        System.out.println("[RESULT]:" + changed_text);
+        StringHelper.start(sb.toString());
     }
 }

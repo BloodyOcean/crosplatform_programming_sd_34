@@ -1,4 +1,3 @@
-import java.sql.Array;
 import java.util.ArrayList;
 
 public class StringHelper {
@@ -68,7 +67,6 @@ public class StringHelper {
 
     public static String change(String text)
     {
-        var l = text.length();
         for (int i = 0; i <= 9; i++)
         {
             text = text.replace((char)('0' + i), '#');

@@ -132,12 +132,13 @@ public class Library implements ILibrary{
     }
 
     @Override
-    public List<Abonement> getDebtors(Date expirationDate) {
+    public List<Debtor> getDebtors(Date expirationDate) {
         var res = this.map
                 .entrySet()
                 .stream()
                 .filter(p -> p.getValue().stream().anyMatch(l -> l.getPlannedReturnDate().before(expirationDate) && l.getRealReturnDate() == null))
-                .map(Map.Entry::getKey)
+                .map(i -> new Debtor(i.getKey(),
+                        expirationDate.getTime() - i.getValue().stream().filter(l -> l.getPlannedReturnDate().before(expirationDate) && l.getRealReturnDate() == null).collect(Collectors.toList()).get(0).getPlannedReturnDate().getTime()))
                 .toList();
 
         return res;

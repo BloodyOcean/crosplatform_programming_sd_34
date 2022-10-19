@@ -9,5 +9,5 @@ public interface ILibrary {
     void sendNotifications();
     int findBigNumOfBooks();
     void printBooks();
-    List<Abonement> getDebtors(Date expirationDate);
+    List<Debtor> getDebtors(Date expirationDate);
 }

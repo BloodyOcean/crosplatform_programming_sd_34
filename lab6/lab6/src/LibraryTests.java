@@ -59,7 +59,14 @@ public class LibraryTests {
     @DisplayName("Should return debtors list by corresponding date")
     void getDebtorsByDate() {
         var res = library.getDebtors(new Date(2022, 06, 26));
+        System.out.println(res);
         assertTrue(res.size() == 3);
+    }
+
+    @Test
+    @DisplayName("Should print list of books")
+    void printBooks() {
+        this.library.printBooks();
     }
 
     @Test

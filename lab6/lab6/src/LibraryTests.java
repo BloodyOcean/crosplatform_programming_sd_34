@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
+import java.io.IOException;
 import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -56,12 +57,26 @@ public class LibraryTests {
     }
 
     @Test
+    @DisplayName("Should serialize library object")
+    void serializeLibrary() throws IOException {
+        LibrarySerializer.saveObject(library);
+    }
+
+    @Test
+    @DisplayName("Should deserialize library object")
+    void deserializeLibrary() throws IOException, ClassNotFoundException {
+        var res = LibrarySerializer.readObject();
+        System.out.println(res);
+    }
+
+    @Test
     @DisplayName("Should return debtors list by corresponding date")
     void getDebtorsByDate() {
         var res = library.getDebtors(new Date(2022, 06, 26));
         System.out.println(res);
         assertTrue(res.size() == 3);
     }
+
 
     @Test
     @DisplayName("Should print list of books")

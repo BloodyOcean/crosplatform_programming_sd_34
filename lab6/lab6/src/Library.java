@@ -1,8 +1,10 @@
+import java.io.Serializable;
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class Library implements ILibrary{
+public class Library implements ILibrary, Serializable {
+    private static final long serialVersionUID = 1L;
     private List<Book> books;
     private List<Abonement> abonements;
     private Map<Abonement, List<UserStory>> map;
@@ -108,6 +110,15 @@ public class Library implements ILibrary{
                 System.out.println(item.getFullName() + "! " + "We have lots of new books! Please, come here!");
             }
         }
+    }
+
+    @Override
+    public String toString() {
+        return "Library{" +
+                "books=" + books +
+                ", abonements=" + abonements +
+                ", map=" + map +
+                '}';
     }
 
     @Override

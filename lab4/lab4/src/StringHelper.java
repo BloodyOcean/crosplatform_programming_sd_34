@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class StringHelper {
 
@@ -44,8 +45,10 @@ public class StringHelper {
 
     }
 
-    public static void start(String str)
+    public static List<String> start(String str)
     {
+        var lst = new ArrayList<String>();
+
         var lst_bracket = calcIndexes(str);
 
         for (var item_l : lst_bracket.getLeft())
@@ -58,11 +61,14 @@ public class StringHelper {
 
                     if (cnt_brackets.isZero())
                     {
-                       System.out.println(change(str.substring(item_l + 1, item_r)));
+                        lst.add(change(str.substring(item_l + 1, item_r)));
+                        System.out.println(change(str.substring(item_l + 1, item_r)));
                     }
                 }
             }
         }
+
+        return lst;
     }
 
     public static String change(String text)

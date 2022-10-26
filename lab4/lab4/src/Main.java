@@ -13,6 +13,7 @@ public class Main {
             String line = scnr.nextLine();
             sb.append(line);
         }
-        StringHelper.start(sb.toString());
+        var res = StringHelper.start(sb.toString());
+        System.out.println(res);
     }
 }

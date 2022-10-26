@@ -1,4 +1,7 @@
-public class Abonement {
+import java.io.Serializable;
+
+public class Abonement implements Serializable {
+    private static final long serialVersionUID = 1L;
     private String fullName;
     private String email;
 

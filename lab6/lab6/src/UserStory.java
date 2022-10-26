@@ -1,6 +1,8 @@
+import java.io.Serializable;
 import java.util.Date;
 
-public class UserStory {
+public class UserStory implements Serializable {
+    private static final long serialVersionUID = 1L;
     private Abonement abonement;
     private Book book;
     private Date receiveDate;
